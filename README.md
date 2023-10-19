@@ -11,9 +11,9 @@ preferido.
 - En la generación de sugerencias se tendrá en cuenta la existencia de combos 
 vigentes. Cada combo incluye uno o varios artículos y beneficia al cliente con un 
 descuento del costo total. Actualmente se manejan los siguientes combos:
- -- Combos porcentuales (X % de descuento en el costo total)
- -- Combos absolutos ($ X por toda la promoción)
- -- Combos A x B (si el cliente compra A, B, C entonces tiene gratis D).
+  - Combos porcentuales (X % de descuento en el costo total)
+  - Combos absolutos ($ X por toda la promoción)
+  - Combos A x B (si el cliente compra A, B, C entonces tiene gratis D).
 
 ## Sistema.
 **1.** El sistema obtiene los siguientes datos de una Base de Datos (no se requiere la carga de datos):
