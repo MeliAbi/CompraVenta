@@ -17,17 +17,17 @@ descuento del costo total. Actualmente se manejan los siguientes combos:
 
 ## Sistema.
 **1.** El sistema obtiene los siguientes datos de una Base de Datos (no se requiere la carga de datos):
-  a. Clientes con sus preferencias.
-  b. Artículos con sus características.
-  c. Combos para ofrecer.
+  - a. Clientes con sus preferencias.
+  - b. Artículos con sus características.
+  - c. Combos para ofrecer.
 **2.** Para un usuario que desea interactuar con la aplicación, permitirá:
-  a. Sugerir un Artículo que coincida con sus preferencias y créditos disponibles.
-    i. No deberá ofrecerse un artículo o combo para el cual no haya stock disponible.
-    ii. Deberá priorizarse la oferta de combos y los artículos, respetando ese orden.
-    iii. No deberá sugerir un artículo o promoción que no pueda pagar.
-    iv. Tampoco deberá ofertarse un artículo que ya haya sido incluida en una promoción anteriormente comprada por el mismo usuario.
-    v. Una vez agotadas las ofertas que coincidan con sus intereses, se ofertarán aquellas que no coincidan, bajo el mismo criterio.
-  b. Si el usuario acepta, se guardará dentro de sus compras. Un producto o combo aceptada no podrá cancelarse.
-  c. En todo momento, el cliente podrá ver sus compras y créditos disponibles,  que habrán contabilizado los gastados.
+  - a. Sugerir un Artículo que coincida con sus preferencias y créditos disponibles.
+    - i. No deberá ofrecerse un artículo o combo para el cual no haya stock disponible.
+    - ii. Deberá priorizarse la oferta de combos y los artículos, respetando ese orden.
+    - iii. No deberá sugerir un artículo o promoción que no pueda pagar.
+    - iv. Tampoco deberá ofertarse un artículo que ya haya sido incluida en una promoción anteriormente comprada por el mismo usuario.
+    - v. Una vez agotadas las ofertas que coincidan con sus intereses, se ofertarán aquellas que no coincidan, bajo el mismo criterio.
+ - b. Si el usuario acepta, se guardará dentro de sus compras. Un producto o combo aceptada no podrá cancelarse.
+ - c. En todo momento, el cliente podrá ver sus compras y créditos disponibles,  que habrán contabilizado los gastados.
 **3.** Todo uso indebido de los componentes deberá lanzar una excepción, pero se solicita que al menos un intento de compra de artículo / combo con crédito insuficiente lance una excepción (CreditosInsuficientesException).
 4. La resolución debe incluir pruebas unitarias de las funcionalidades de combo,compras, la sugerencia artículos / combos y que se lance una excepción
