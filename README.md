@@ -1,6 +1,6 @@
 # CompraVenta
 
-## Una importante empresa de compraventa de artículos de estilo, “San Nicolás”, ha decidido crear un sistema para permitir la manejar todas las transacciones de esta. Éste contará con la información de los artículos que posee para la venta. Están interesados en contar inicialmente con un módulo que les permita sugerir artículos a los compradores y también llevar un registro de las compras a partir de la información de preferencias disponibles en el perfil de los compradores.
+### Una importante empresa de compraventa de artículos de estilo, “San Nicolás”, ha decidido crear un sistema para permitir la manejar todas las transacciones de esta. Éste contará con la información de los artículos que posee para la venta. Están interesados en contar inicialmente con un módulo que les permita sugerir artículos a los compradores y también llevar un registro de las compras a partir de la información de preferencias disponibles en el perfil de los compradores.
 
 Se pide implementar la lógica para sugerir artículos y registro de compras siguiendo las 
 siguientes especificaciones:
