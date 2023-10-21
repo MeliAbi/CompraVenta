@@ -1,17 +1,38 @@
 package compraVenta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Combo {
 	
-	private TIPODEARTICULO tipo=null;
+	private List<Articulo> listaArticulos=null;
+	private Double precioFinal =0.0;
 
-	public Combo(TIPODEARTICULO tipo) {
-		this.tipo=tipo;
+	public Combo() {
+		listaArticulos=new ArrayList <Articulo>();
 	}
 	
-	public TIPODEARTICULO getTipo() {
-		return tipo;
+	
+	public List<Articulo> getListaArticulos() {
+		return listaArticulos;
 	}
 	
+	public Double aplicarCombo() {
+		
+		return 0.0;
+	}
+	
+	public void setListaArticulos(ArrayList <Articulo> a) {
+		listaArticulos.addAll(a);
+	}
+	
+	public Double getPrecioFinal() {
+		return precioFinal;
+	}
+	
+	public void setPrecioFinal(Double p) {
+		precioFinal=p;
+	}
 	
 
 }

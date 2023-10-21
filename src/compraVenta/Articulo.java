@@ -50,4 +50,10 @@ public class Articulo {
 		precio=p;
 	}
 	
+	public String toString() {
+		return "ID: " + id + "\n" +
+				"Nombre: " + nombre + "\n" + 
+				"Tipo: " + tipoDeArticulo;
+	}
+	
 }

@@ -24,6 +24,20 @@ public class Test {
 	}
 	
 	@org.junit.Test
+	public void queElSistemaRecomiendeArticulosYCombos() {
+		Sistema sistema = new Sistema("NombreGenerico");
+		Usuario usuario1 = new Usuario(42592630,"Martin P.", 100000.0, TIPODEARTICULO.Invaluable);
+		
+		//-//
+		sistema.registrarUsuario(usuario1);
+		
+		//-//
+		Integer resultadoEsperado = 2002;
+		assertNotNull(sistema.buscarUsuario(42592630));
+		assertEquals(resultadoEsperado,sistema.recomendarArticulo(usuario1).getId());
+	}
+	
+	@org.junit.Test
 	public void queUnUsuarioGenereUnaCompra() throws CreditosInsuficientesException, SinStockException {
 		Sistema sistema = new Sistema("NombreGenerico");
 		Usuario usuario1 = new Usuario(42592630,"Martin P.", 100000.0, TIPODEARTICULO.Invaluable);
