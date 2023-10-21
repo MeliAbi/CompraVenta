@@ -26,8 +26,13 @@ public class Usuario {
 	public Double getPresupuesto() {
 		return presupuesto;
 	}
+	
 	public TIPODEARTICULO getArticuloPreferido() {
 		return articuloPreferido;
+	}
+	
+	public void setPresupuesto( Double a) {
+		presupuesto=a;
 	}
 
 }
