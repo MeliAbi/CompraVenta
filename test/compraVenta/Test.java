@@ -56,11 +56,57 @@ public class Test {
 		assertEquals((Integer)4,sistema.buscarArticulo(2001).getCantidad());
 	}
 	
-	/*
-	listaDeCombos.add(new Porcentual(30,TIPODEARTICULO.DeLujo));
-	listaDeCombos.add(new Absoluto(15000.0,TIPODEARTICULO.Invaluable));
-	listaDeCombos.add(new AXB(3,TIPODEARTICULO.Antiguedad));
-	*/
+	@org.junit.Test
+	public void queAUsuarioSeLeRecomiendeUnArticuloDeSuPreferencia(){
+		Sistema sistema = new Sistema("NombreGenerico");
+		Usuario usuario1 = new Usuario(42592630,"Martin P.", 1000000.0, TIPODEARTICULO.Invaluable);
+		
+		//-//
+		sistema.registrarUsuario(usuario1);
+
+		//-//
+		assertNotNull(sistema.recomendarArticulo(usuario1));
+		assertEquals(usuario1.getArticuloPreferido(),sistema.recomendarArticulo(usuario1).getTipoDeArticulo());
+	}
+	
+	@org.junit.Test
+	public void queAUsuarioSeLeRecomiendeUnArticuloNoDeSuPreferencia(){
+		Sistema sistema = new Sistema("NombreGenerico");
+		Usuario usuario1 = new Usuario(42592630,"Martin P.", 14000.0, TIPODEARTICULO.Invaluable);
+		
+		//-//
+		sistema.registrarUsuario(usuario1);
+
+		//-//
+		assertNotNull(sistema.recomendarArticulo(usuario1));
+		assertNotEquals(usuario1.getArticuloPreferido(),sistema.recomendarArticulo(usuario1).getTipoDeArticulo());
+	}
+	
+	@org.junit.Test
+	public void queAUsuarioSeLeRecomiendeUnComboDeSuPreferencia(){
+		Sistema sistema = new Sistema("NombreGenerico");
+		Usuario usuario1 = new Usuario(42592630,"Martin P.", 1000000.0, TIPODEARTICULO.Invaluable);
+		
+		//-//
+		sistema.registrarUsuario(usuario1);
+
+		//-//
+		assertNotNull(sistema.recomendarCombo(usuario1));
+		assertEquals(usuario1.getArticuloPreferido(),sistema.recomendarCombo(usuario1).getTipo());
+	}
+	
+	@org.junit.Test
+	public void queAUsuarioSeLeRecomiendeUnComboNoDeSuPreferencia(){
+		Sistema sistema = new Sistema("NombreGenerico");
+		Usuario usuario1 = new Usuario(42592630,"Martin P.", 28000.0, TIPODEARTICULO.Invaluable);
+		
+		//-//
+		sistema.registrarUsuario(usuario1);
+
+		//-//
+		assertNotNull(sistema.recomendarArticulo(usuario1));
+		assertNotEquals(usuario1.getArticuloPreferido(),sistema.recomendarCombo(usuario1).getTipo());
+	}
 
 
 }

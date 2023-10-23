@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Combo {
 	
-	private List<Articulo> listaArticulos=null;
-	private Double precioFinal =0.0;
+	protected List<Articulo> listaArticulos=null;
+	protected Double precioFinal =0.0;
+	protected TIPODEARTICULO tipo=null;
 
 	public Combo() {
 		listaArticulos=new ArrayList <Articulo>();
@@ -22,12 +23,12 @@ public class Combo {
 		return 0.0;
 	}
 	
-	public void setListaArticulos(ArrayList <Articulo> a) {
-		listaArticulos.addAll(a);
-	}
-	
 	public Double getPrecioFinal() {
 		return precioFinal;
+	}
+	
+	public TIPODEARTICULO getTipo() {
+		return tipo;
 	}
 	
 	public void setPrecioFinal(Double p) {

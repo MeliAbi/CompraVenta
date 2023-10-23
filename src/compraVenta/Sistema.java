@@ -22,10 +22,10 @@ public class Sistema {
 	}
 	
 	private void generarListaDeArticulos() {
-		listaDeArticulos.add(new Articulo(2001,  "Sofa chino",  452312300.0,  "Sofa chino",  5,  TIPODEARTICULO.Antiguedad));
-		listaDeArticulos.add(new Articulo(2002,  "Jarron Indio",  500.0,  "Jarron Indio",  2,  TIPODEARTICULO.Antiguedad));
-		listaDeArticulos.add(new Articulo(2003,  "Pincel de Picasso",  100000.0,  "Cama de Picasso",  0,  TIPODEARTICULO.Invaluable));
-		listaDeArticulos.add(new Articulo(2004,  "Mesada de marmol",  654898.0,  "Mesada de marmol",  10,  TIPODEARTICULO.DeLujo));
+		listaDeArticulos.add(new Articulo(2001,  "Sofa chino",  452200.0,  "Sofa chino",  5,  TIPODEARTICULO.Antiguedad));
+		listaDeArticulos.add(new Articulo(2002,  "Jarron Indio",  593800.0,  "Jarron Indio",  2,  TIPODEARTICULO.Antiguedad));
+		listaDeArticulos.add(new Articulo(2003,  "Pincel de Picasso",  1000000.0,  "Cama de Picasso",  1,  TIPODEARTICULO.Invaluable));
+		listaDeArticulos.add(new Articulo(2004,  "Mesada de marmol",  65898.0,  "Mesada de marmol",  10,  TIPODEARTICULO.DeLujo));
 		listaDeArticulos.add(new Articulo(2005,  "La primer birome",  4700980.0,  "producto nuevo",  1,  TIPODEARTICULO.Exoticos));
 		listaDeArticulos.add(new Articulo(2006,  "Bicicleta del 1910",  14000.0,  "producto nuevo",  1,  TIPODEARTICULO.Exoticos));
 		listaDeArticulos.add(new Articulo(2007,  "Guardarropas de San Martin",  9832738.0,  "producto nuevo",  1,  TIPODEARTICULO.Invaluable));
@@ -146,6 +146,57 @@ public class Sistema {
 				
 		
 		return null;
+		
+	}
+	
+
+	public Combo devolverComboPorTipo(TIPODEARTICULO tipo) {
+
+		for (Combo a : listaDeCombos) {
+		    if(a.getTipo()==tipo) {
+		    	return a;
+		    }
+		}
+		return null;		
+		
+	}
+	
+	public boolean validarCriteriosCombo(Usuario user, Combo local) {
+		
+		if(local!=null && local.getPrecioFinal()<=user.getPresupuesto()) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public Combo recomendarCombo(Usuario user) {
+		
+		ArrayList <TIPODEARTICULO> TDA = new ArrayList <TIPODEARTICULO>();
+		TDA.add(TIPODEARTICULO.Antiguedad);
+		TDA.add(TIPODEARTICULO.DeLujo);
+		TDA.add(TIPODEARTICULO.Exoticos);
+		TDA.add(TIPODEARTICULO.Invaluable);		
+		
+		TDA.remove(user.getArticuloPreferido());
+		
+		Combo local = devolverComboPorTipo(user.getArticuloPreferido());
+		
+		if(local!=null && validarCriteriosCombo(user, local)) {
+			return local;
+		}else {
+			for(TIPODEARTICULO actual : TDA) {
+				local = devolverComboPorTipo(actual);
+				if(local!=null && validarCriteriosCombo(user, local)) {
+					return local;
+				}
+			}
+		}
+		return null;
+		
+		
+		
+					
 		
 	}
 
